@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Slayder Yapımı</title>
+
+    <style>
+        .galeri{
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        .fotolar{
+ 
+            margin: 50px;
+        }
+
+        #foto{
+            width: 400px;
+            height: 300px;
+
+       }
+        .cerceve{
+            border: 3px solid #000;
+            width: 500px;
+            height: 400px;
+            border-radius: 20px;
+            
+        }
+
+
+         
+        #btn1,#btn2,#btn3,#btn4{
+            width: 50px;
+            height: 35px;
+            background-color: darkgray;
+            float: left;
+            margin: 10px 15px 0 50px;
+            border-radius: 25px;
+            text-align: center;
+            padding-top: 15px;
+            font-size: 20px;
+            color: #fff;
+            border: 1px solid #000;
+            box-shadow: 4px 4px 20px #000;
+            
+        }
+
+        #btn1{
+            background-color: #000;
+        }  
+
+        #btn1:hover,#btn2:hover,#btn3:hover,#btn4:hover{
+            cursor: pointer;
+        }
+
+       
+
+    </style>
+
+    <script>
+        function btnTikla(x){
+
+            document.getElementById("foto").src = "img/"+x+ ".jpg";
+
+            var secilen="#000", varsayılan= "darkgray";
+
+            if(("btn"+x)=="btn1"){
+                document.getElementById("btn1").style.background = secilen;
+                document.getElementById("btn2").style.background = varsayılan;
+                document.getElementById("btn3").style.background = varsayılan;
+                document.getElementById("btn4").style.background = varsayılan;
+
+            }
+
+            else if(("btn"+x)=="btn2"){
+                document.getElementById("btn1").style.background = varsayılan;
+                document.getElementById("btn2").style.background = secilen;
+                document.getElementById("btn3").style.background = varsayılan;
+                document.getElementById("btn4").style.background = varsayılan;
+
+            }
+
+            else if(("btn"+x)=="btn3"){
+                document.getElementById("btn1").style.background = varsayılan;
+                document.getElementById("btn2").style.background = varsayılan;
+                document.getElementById("btn3").style.background = secilen;
+                document.getElementById("btn4").style.background = varsayılan;
+
+            }
+
+            else if(("btn"+x)=="btn4"){
+                document.getElementById("btn1").style.background = varsayılan;
+                document.getElementById("btn2").style.background = varsayılan;
+                document.getElementById("btn3").style.background = varsayılan;
+                document.getElementById("btn4").style.background = secilen;
+
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div class="galeri">
+
+        <div class="cerceve">
+            <div class="fotolar">
+                <img src="img/1.jpg" id="foto">
+            </div>
+        </div>
+        <div class="butonlar">
+
+            <div id="btn1" onclick="btnTikla(1)">1</div>
+            <div id="btn2" onclick="btnTikla(2)">2</div>
+            <div id="btn3" onclick="btnTikla(3)">3</div>
+            <div id="btn4" onclick="btnTikla(4)">4</div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
